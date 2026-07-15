@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CambioReal.Travelex.Client/CambioReal.Travelex.Client.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CambioReal.Travelex.Client.Tests/CambioReal.Travelex.Client.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>CambioReal.Travelex</RootNamespace>
+    <AssemblyName>CambioReal.Travelex.Client</AssemblyName>
+    <PackageId>CambioReal.Travelex.Client</PackageId>
+    <Description>Cliente .NET tipado para a Travelex Bank (TIHUM) Corebanking API — PIX payin (cob BACEN-style), payout por chave, saldo e webhooks, com mTLS e auth Basic→JWT. Mesmo padrão dos SDKs cambioreal.</Description>
+    <IsPackable>true</IsPackable>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Options" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="CambioReal.Travelex.Client.Tests" />
+  </ItemGroup>
+
+</Project>
