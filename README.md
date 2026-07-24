@@ -12,3 +12,20 @@ executados (goal §0.5). Cert mTLS válido até 2034.
 
 Secrets: `pass cambio-real-v2/providers/travelex/homologation-{env,client-cert,client-key}`.
 Discovery: `docs/providers/travelex/discovery.md`.
+
+## Instalação e uso
+
+Pacote no GitHub Packages da org `cambioreal` (feed configurado no `NuGet.config` do repo consumidor):
+
+```bash
+dotnet add package CambioReal.Travelex.Client
+```
+
+```csharp
+// Registro via DI — credenciais vêm de config segura (env/Secret/pass), nunca versionadas.
+builder.Services.AddTravelexClient(builder.Configuration.GetSection(TravelexOptions.SectionName));
+
+// ...injete CambioReal.Travelex.TravelexClient onde precisar.
+```
+
+Também há a sobrecarga `AddTravelexClient(Action<TravelexOptions>)` para configuração inline.
