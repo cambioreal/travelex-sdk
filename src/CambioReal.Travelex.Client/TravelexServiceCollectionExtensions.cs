@@ -34,10 +34,18 @@ public static class TravelexServiceCollectionExtensions
         services.AddOptions<TravelexOptions>().Validate(
             options =>
             {
-                options.Validate();
-                return true;
+                try
+                {
+                    options.Validate();
+                    return true;
+                }
+                catch (InvalidOperationException)
+                {
+                    return false;
+                }
             },
-            "A configuração do TravelexOptions é inválida.");
+            "A configuração do TravelexOptions é inválida.")
+            .ValidateOnStart();
 
         services.TryAddSingleton(TimeProvider.System);
         services.TryAddSingleton<ITravelexTokenProvider, TravelexTokenProvider>();
