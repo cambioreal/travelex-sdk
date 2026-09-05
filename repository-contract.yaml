@@ -1,0 +1,7 @@
+schema_version: repository-contract/v1
+repository_id: c3599696-0c56-404a-8335-518df59d92f6
+identity:
+  remotes:
+  - github.com/cambioreal/travelex-sdk
+capabilities:
+  manifest: null
